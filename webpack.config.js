@@ -31,6 +31,10 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, 
+        loader: 'url-loader?limit=8192'
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
@@ -41,7 +45,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      '@':path.join(__dirname,  './src'),
+      'styles':path.join(__dirname,  './src/assets/styles')
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
@@ -55,7 +61,6 @@ module.exports = {
   },
   devtool: '#eval-source-map'
 }
-
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
