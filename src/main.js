@@ -19,9 +19,6 @@ Vue.use(VueAwesomeSwiper, /* { default global options } */)
 /*fastClick 解决移动端click 300ms*/
 fastClick.attach(document.body);
 
-/*
-Vue.config.productionTip=false*/
-
 new Vue({
   el: '#app',
   router,

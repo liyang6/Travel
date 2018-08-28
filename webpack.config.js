@@ -9,19 +9,17 @@ module.exports = {
     filename: 'build.js'
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: [
           'vue-style-loader',
           'css-loader'
         ],
-      },      {
+      }, {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          loaders: {
-          }
+          loaders: {}
           // other vue-loader options go here
         }
       },
@@ -31,7 +29,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, 
+        test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
         loader: 'url-loader?limit=8192'
       },
       {
@@ -46,8 +44,8 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@':path.join(__dirname,  './src'),
-      'styles':path.join(__dirname,  './src/assets/styles')
+      '@': path.join(__dirname, './src'),
+      'styles': path.join(__dirname, './src/assets/styles')
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
@@ -59,10 +57,23 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+
 }
+
+/*  proxyTable:{
+      '/api': {
+        target: 'http://localhost:8086',//接口域名
+        changeOrigin: false,//是否跨域
+        pathRewrite: {
+          '^/api': '/static/mock'//需要rewrite重写
+        }
+      }
+    };*/
+
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
+
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
