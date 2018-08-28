@@ -9,8 +9,16 @@ import 'styles/border.css'
 
 import './assets/styles/iconfont.css'
 
+
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
+
+
+
 /*fastClick 解决移动端click 300ms*/
 fastClick.attach(document.body);
+
 /*
 Vue.config.productionTip=false*/
 
