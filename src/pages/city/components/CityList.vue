@@ -21,54 +21,18 @@
 			<div class="area">
 				<div class="title border-topbottom">热门城市</div>
 				<div class="button-list">
-					<div class="button-wrap">
-						<div class="button">北京</div>
+					<div class="button-wrap" v-for="item in hotCities" :key="item.id">
+						<div class="button">{{item.name}}</div>
 					</div>
-					<div class="button-wrap">
-						<div class="button">北京</div>
-					</div>
-					<div class="button-wrap">
-						<div class="button">北京</div>
-					</div>
-					<div class="button-wrap">
-						<div class="button">北京</div>
-					</div>
-					<div class="button-wrap">
-						<div class="button">北京</div>
-					</div>
-					<div class="button-wrap">
-						<div class="button">北京</div>
-					</div>
-					<div class="button-wrap">
-						<div class="button">北京</div>
-					</div>
-					<div class="button-wrap">
-						<div class="button">北京</div>
-					</div>
+					
 				</div>
 			</div>
-			<div class="area">
-				<div class="title border-topbottom">A</div>
+			<div class="area" v-for="(item,key) in cities" :key="key">
+				<div class="title border-topbottom">{{key}}</div>
 				<div class="item-list">
-					<div class="item border-bottom">aaa</div>
-					<div class="item border-bottom">bbb</div>
-					<div class="item border-bottom">ccc</div>
-					<div class="item border-bottom">ddd</div>
+					<div class="item border-bottom" v-for="val in item" :key="val.id">{{val.name}}</div>
 				</div>
-				<div class="title border-topbottom">A</div>
-				<div class="item-list">
-					<div class="item border-bottom">aaa</div>
-					<div class="item border-bottom">bbb</div>
-					<div class="item border-bottom">ccc</div>
-					<div class="item border-bottom">ddd</div>
-				</div>
-				<div class="title border-topbottom">A</div>
-				<div class="item-list">
-					<div class="item border-bottom">aaa</div>
-					<div class="item border-bottom">bbb</div>
-					<div class="item border-bottom">ccc</div>
-					<div class="item border-bottom">ddd</div>
-				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -79,6 +43,10 @@
 		name:"cityList",
 		mounted(){
 			this.scroll=new Bscroll(this.$refs.wrapper)
+		},
+		props:{
+			cities:Object,
+			hotCities:Array
 		}
 	}
 </script>

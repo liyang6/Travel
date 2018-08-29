@@ -1,19 +1,19 @@
 <template>
 	<ul class="list">
-		<li class="item">A</li>
-		<li class="item">A</li>
-		<li class="item">A</li>
-		<li class="item">A</li>
-		<li class="item">A</li>
+		<li class="item" v-for="(item,key) of cities" :key="key">{{key}}</li>
 	</ul>
 </template>
 <script type="text/javascript">
 	export default {
-		name:"Alphabet"
+		name:"Alphabet",
+		props:{
+			cities:Object
+		}
 	}
 </script>
 
 <style type="text/css" scoped lang="stylus">
+@import '~styles/varibles.styl'
 .list{
 	display: flex;
 	flex-direction: column;
@@ -27,6 +27,6 @@
 .item{
 	line-height: .4rem;
 	text-align: center;
-	color:$bgColor;
+	color:$bgColor
 }
 </style>
