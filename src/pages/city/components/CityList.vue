@@ -7,15 +7,6 @@
 					<div class="button-wrap">
 						<div class="button">北京</div>
 					</div>
-					<div class="button-wrap">
-						<div class="button">北京</div>
-					</div>
-					<div class="button-wrap">
-						<div class="button">北京</div>
-					</div>
-					<div class="button-wrap">
-						<div class="button">北京</div>
-					</div>
 				</div>
 			</div>
 			<div class="area">
