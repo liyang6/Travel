@@ -7,16 +7,16 @@
   		<span class="iconfont">&#xe632;</span>输入城市/经典/主题
   	</div>
 	<router-link to="/city">
-  		<div class="header-right">{{city}}<span class="iconfont arrow-icon">&#xe6aa;</span></div>
+  		<div class="header-right">{{this.city}}<span class="iconfont arrow-icon">&#xe6aa;</span></div>
 	</router-link>
   </div>
 </template>
 <script>
-
+import { mapState } from 'vuex'
 export default {
   name: "homeHeader",
-  props:{
-  	city:String
+  computed:{
+  	...mapState(['city'])
   }
 }
 
@@ -44,7 +44,8 @@ export default {
 		border-radius:.1rem 
 		color:#ccc
 	.header-right
-		width:1.24rem
+		min-width:1.04rem
+		padding:0 .1rem
 		text-align:center
 		color:#fff
 		.arrow-icon

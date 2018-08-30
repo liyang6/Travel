@@ -14,6 +14,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
+import store from './store'
+
 
 
 /*fastClick 解决移动端click 300ms*/
@@ -22,5 +24,6 @@ fastClick.attach(document.body);
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })
