@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../pages/home/Home.vue'
-import City from '../pages/city/City.vue'
-
+import Home from '@/pages/home/Home.vue'
+import City from '@/pages/city/City.vue'
+import Detail from '@/pages/detail/Detail.vue'
 Vue.use(VueRouter);
 
 var routes = [
   { path: "/",name:"Home",component: Home },
-  { path: "/city",name:"City",component: City }
+  { path: "/city",name:"City",component: City },
+  { path: "/detail/:id",name:"Detail",component: Detail }
 ];
 
 var router = new VueRouter({ routes });
