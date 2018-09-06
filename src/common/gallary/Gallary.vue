@@ -61,7 +61,6 @@
 	padding-top: 50%;
 	padding-bottom: 50%;
 	height: 0;
-	overflow: hidden;
 	background: #fff;
 }
 .gallary-img{
@@ -69,7 +68,7 @@
 }
 .swiper-pagination{
 	bottom:-1rem;
-	color: red;
+	color: #fff;
 }
 .swiper-container{
 	overflow: initial;
