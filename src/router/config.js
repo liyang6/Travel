@@ -11,6 +11,13 @@ var routes = [
   { path: "/detail/:id",name:"Detail",component: Detail }
 ];
 
-var router = new VueRouter({ routes });
+var router = new VueRouter(
+		{ 
+			routes,
+			scrollBehavior (to, from, savedPosition) {
+			  return { x: 0, y: 0 }
+			}
+		}
+	);
 
 export default router

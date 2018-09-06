@@ -45,7 +45,7 @@ export default {
 			}else{
 				this.showAbs=true
 			}
-			console.log();
+			console.log(top);
 		}
 	},
 	activated(){

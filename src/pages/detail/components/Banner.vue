@@ -1,14 +1,14 @@
 <template>
 	<div>
 		<div class="banner" @click="handleBanner">
-			<img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1609/7a/7ae8ee7831836095a3.water.jpg_600x330_5d562f69.jpg">
+			<img class="banner-img" :src="bannerImg">
 			<div class="banner-info">
-				<div class="banner-title">金海湖风景区(AAAA景区)</div>
-				<div  class="banner-number"><span class="iconfont arrow-icon">&#xe64a;</span>39</div>
+				<div class="banner-title">{{sightName}}</div>
+				<div  class="banner-number"><span class="iconfont arrow-icon">&#xe64a;</span>{{gallaryImgs.length}}</div>
 			</div>
 		</div>
 
-		<common-gallary @closeImg="handleImgClose" :imgs="imgs" v-show="showGallary"></common-gallary>
+		<common-gallary @closeImg="handleImgClose" :imgs="gallaryImgs" v-show="showGallary"></common-gallary>
 	</div>
 </template>
 <script type="text/javascript">
@@ -34,6 +34,11 @@ export default	{
 		handleImgClose(){
 			this.showGallary=false;
 		}
+	},
+	props:{
+		sightName:String,
+    	bannerImg:String,
+    	gallaryImgs:Array
 	}
 }
 </script>
