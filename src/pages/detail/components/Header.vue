@@ -31,6 +31,9 @@ export default {
 			}
 		}
 	},
+	mounted(){
+
+	},
 	methods:{
 		handleScroll(){
 			const top=document.documentElement.scrollTop;
@@ -46,8 +49,10 @@ export default {
 		}
 	},
 	activated(){
-
 		window.addEventListener("scroll",this.handleScroll)
+	},
+	deactivated(){
+		window.removeEventListener("scroll",this.handleScroll)
 	}
 }
 </script>
@@ -58,6 +63,7 @@ export default {
 	position:absolute;
 	left:.2rem;
 	top:.2rem;
+
 	width: .8rem;
 	height: .8rem;
 	line-height: .8rem;
@@ -74,6 +80,7 @@ export default {
 	top:0;
 	left:0;
 	right:0;
+	z-index: 3;
 	height:$headerHeight;
 	line-height: $headerHeight;
 	text-align: center;
