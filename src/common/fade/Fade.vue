@@ -7,7 +7,6 @@
 export default {
   name: "fadeAnimation"
 }
-
 </script>
 <style type="text/css" scoped lang="stylus">
 .v-enter,.v-leave{

@@ -16,6 +16,7 @@ Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 import store from './store'
 
+import 'babel-polyfill'
 
 
 /*fastClick 解决移动端click 300ms*/
